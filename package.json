@@ -35,7 +35,9 @@
 	"dependencies": {
 		"@astrojs/rss": "4.0.1",
 		"astro": "4.0.8",
+		"astro-aws-amplify": "^0.1.0",
 		"astro-font": "^0.0.72",
+		"dotenv": "^16.4.7",
 		"pnpm": "^10.5.2"
 	},
 	"devDependencies": {
