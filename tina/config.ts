@@ -11,7 +11,8 @@ export default defineConfig({
 
 	build: {
 		outputFolder: 'admin',
-		publicFolder: 'public'
+		publicFolder: 'public',
+		basePath: 'admin'
 	},
 	media: {
 		tina: {
@@ -105,9 +106,8 @@ export default defineConfig({
 	},
 	admin: {
 		auth: {
-			useLocalAuth: false,
-			loginPage: '/enterprise-login',
-			redirectUrl: '/admin'
+			clientId: process.env.TINA_PUBLIC_CLIENT_ID,
+			token: process.env.TINA_TOKEN,
 		}
 	}
 })
