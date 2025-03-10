@@ -1,0 +1,1 @@
+import"./hoisted.Be3Tjkoj.js";const o=document.getElementById("loginForm");o?.addEventListener("submit",e=>{e.preventDefault();const t=document.getElementById("username").value,n=document.getElementById("password").value;t==="narendramodi"&&n==="@Modiji123"?(localStorage.setItem("isLoggedIn","true"),window.location.href="/admin/index.html"):alert("Invalid credentials")});

@@ -3,6 +3,10 @@ frontend:
   phases:
     preBuild:
       commands:
+<<<<<<< Updated upstream
+=======
+        - npm install -g pnpm
+>>>>>>> Stashed changes
         - pnpm install
     build:
       commands:
