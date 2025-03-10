@@ -21,6 +21,21 @@ frontend:
           value: 'no-cache'
         - key: 'Expires'
           value: '0'
+    - pattern: '/enterprise-login'
+      headers:
+        - key: 'Cache-Control'
+          value: 'no-store, no-cache, must-revalidate, proxy-revalidate'
+        - key: 'Pragma'
+          value: 'no-cache'
+        - key: 'Expires'
+          value: '0'
+  redirects:
+    - source: '/admin'
+      target: '/admin/index.html'
+      status: '200'
+    - source: '/admin/'
+      target: '/admin/index.html'
+      status: '200'
   cache:
     paths:
       - node_modules/**/*

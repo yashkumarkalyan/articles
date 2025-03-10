@@ -106,7 +106,8 @@ export default defineConfig({
 	admin: {
 		auth: {
 			useLocalAuth: false,
-			loginPage: '/enterprise-login'
+			loginPage: '/enterprise-login',
+			redirectUrl: '/admin'
 		}
 	}
 })
