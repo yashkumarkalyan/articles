@@ -85,7 +85,6 @@ export default defineConfig({
 						name: 'body',
 						isBody: true,
 						templates: [
-							// Custom Components
 							{
 								label: 'SButton',
 								name: 'SButton',
@@ -106,7 +105,7 @@ export default defineConfig({
 	},
 	admin: {
 		auth: {
-			useLocalAuth: true,
+			useLocalAuth: false,
 			loginPage: '/enterprise-login'
 		}
 	}
