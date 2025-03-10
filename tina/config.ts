@@ -6,12 +6,13 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main'
 
 export default defineConfig({
 	branch,
-	clientId: process.env.NODE_ENV === 'development' ? 'dummy' : null, // Get this from tina.io
-	token: process.env.NODE_ENV === 'development' ? 'dummy' : null, // Get this from tina.io
+	clientId: process.env.TINA_PUBLIC_CLIENT_ID,
+	token: process.env.TINA_TOKEN,
 
 	build: {
 		outputFolder: 'admin',
-		publicFolder: 'public'
+		publicFolder: 'public',
+		basePath: 'admin'
 	},
 	media: {
 		tina: {
@@ -85,7 +86,6 @@ export default defineConfig({
 						name: 'body',
 						isBody: true,
 						templates: [
-							// Custom Components
 							{
 								label: 'SButton',
 								name: 'SButton',
@@ -106,8 +106,8 @@ export default defineConfig({
 	},
 	admin: {
 		auth: {
-			useLocalAuth: true,
-			loginPage: '/enterprise-login'
+			clientId: process.env.TINA_PUBLIC_CLIENT_ID,
+			token: process.env.TINA_TOKEN,
 		}
 	}
 })

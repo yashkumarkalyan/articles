@@ -12,6 +12,31 @@ frontend:
     baseDirectory: dist
     files:
       - '**/*'
+  customHeaders:
+    - pattern: '/admin/**'
+      headers:
+        - key: 'Cache-Control'
+          value: 'no-store, no-cache, must-revalidate, proxy-revalidate'
+        - key: 'Pragma'
+          value: 'no-cache'
+        - key: 'Expires'
+          value: '0'
+  redirects:
+    - source: '/admin'
+      target: '/admin/index.html'
+      status: '200'
+    - source: '/admin/'
+      target: '/admin/index.html'
+      status: '200'
+    - source: '/admin/*'
+      target: '/admin/index.html'
+      status: '200'
+    - source: '/enterprise-login'
+      target: '/enterprise-login/index.html'
+      status: '200'
+    - source: '/admin/index.html'
+      target: '/admin/index.html'
+      status: '200'
   cache:
     paths:
       - node_modules/**/*
