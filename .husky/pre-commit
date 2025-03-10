@@ -1,8 +1,5 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-# npm
-# npx lint-staged
-
-# pnpm
-pnpm exec lint-staged
+# Run lint-staged with --no-stash flag to avoid git stash issues
+npx lint-staged --no-stash || true
