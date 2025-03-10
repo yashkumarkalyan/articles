@@ -3,10 +3,7 @@ frontend:
   phases:
     preBuild:
       commands:
-<<<<<<< Updated upstream
-=======
         - npm install -g pnpm
->>>>>>> Stashed changes
         - pnpm install
     build:
       commands:
@@ -17,4 +14,4 @@ frontend:
       - '**/*'
   cache:
     paths:
-      - node_modules/**/* 
+      - node_modules/**/*
