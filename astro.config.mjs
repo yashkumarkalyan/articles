@@ -30,5 +30,8 @@ export default defineConfig({
 		}),
 		sitemap(),
 		tailwind()
-	]
+	],
+	devToolbar: {
+		enabled: false
+	}
 })

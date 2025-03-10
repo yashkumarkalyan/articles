@@ -6,8 +6,8 @@ const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main'
 
 export default defineConfig({
 	branch,
-	clientId: null, // Get this from tina.io
-	token: null, // Get this from tina.io
+	clientId: process.env.NODE_ENV === 'development' ? 'dummy' : null, // Get this from tina.io
+	token: process.env.NODE_ENV === 'development' ? 'dummy' : null, // Get this from tina.io
 
 	build: {
 		outputFolder: 'admin',
@@ -34,7 +34,6 @@ export default defineConfig({
 						name: 'heroImage',
 						description: 'The image used for the cover of the post'
 					},
-
 					{
 						type: 'string',
 						required: true,
@@ -83,7 +82,7 @@ export default defineConfig({
 					{
 						type: 'rich-text',
 						label: 'Body',
-						name: 'SButton',
+						name: 'body',
 						isBody: true,
 						templates: [
 							// Custom Components
@@ -104,5 +103,11 @@ export default defineConfig({
 				]
 			}
 		]
+	},
+	admin: {
+		auth: {
+			useLocalAuth: true,
+			loginPage: '/enterprise-login'
+		}
 	}
 })
